@@ -2,21 +2,69 @@
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
 </head>
 <body>
-
-<video id="video_player" width="320" height="240" controls>
-  <source src="movie.mp4" type="video/mp4">
-  <source src="movie.ogg" type="video/ogg">
-  Your browser does not support the video tag.
-</video>
+<div>
+  <video id="video_player" style="width:100%;height: 100%;">
+    <source src="" type="video/mp4">
+    <source src="" type="video/ogg">
+    Your browser does not support the video tag.    
+  </video>
+  <div>
+    <input id="Play" type="button" value="Play">
+    <input id="Pause" type="button" value="Pause">
+    <input id="Next" type="button" value="Next">
+    <input id="Previous" type="button" value="Previous">
+  </div>
+</div>
 
 </body>
 </html>
 
 <script>
-    var videoPlayerURL = prompt("Please enter your name", "");
-    var videoPlayer = $("#video_player");
-    videoPlayer.children("source").attr("src",videoPlayerURL);
-    videoPlayer.load();
+    //var videoPlayerURL = prompt("Please enter your name", "");
+    //var videoPlayer = $("#video_player");
+    //videoPlayer.children("source").attr("src",videoPlayerURL);
+    //videoPlayer.load();
+    var video = document.getElementById('video_player');
+    var videoFiles;
+    var videoIndex = 0;
+    $.getJSON("database.json", function(json) {
+      console.log(json.video_player); // this will show the info it in firebug console
+      videoFiles = json.video_player;
+      
+      video.src = videoFiles[videoIndex].url;
+      video.load();
+    });
+
+    $("#Play").click(function(){        
+      $("#video_player").trigger('play');
+    })
+    $("#Pause").click(function(){
+      $("#video_player").trigger('pause');
+    })
+    $("#Next").click(function(){
+      console.log(videoFiles.length)
+      if(videoIndex >= 0 && videoFiles.length > videoIndex + 1){
+        videoIndex = videoIndex + 1;
+        video.src = videoFiles[videoIndex].url;
+        video.load();
+        
+      }
+      $("#video_player").trigger('play');
+      
+    })
+
+    $("#Previous").click(function(){
+      console.log(videoFiles[videoIndex].url)
+      if(videoIndex > 0){
+        videoIndex = videoIndex - 1;
+        video.src = videoFiles[videoIndex].url;
+        video.load();
+        
+      }  
+      $("#video_player").trigger('play');    
+    })
+
 </script>
