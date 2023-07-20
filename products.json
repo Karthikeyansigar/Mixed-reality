@@ -1,0 +1,57 @@
+{
+  "ProductDetailList": [
+    {
+        "Type": "Marie Gold Biscuit",
+        "Desc": "Product : Marie Gold - popular brand of biscuits known for its light and crispy  texture.\nExpiry Date : 07/07/2024",
+        "Recommendation": "This product should move to the discount sale area",
+        "Biscuit": "MarieGold",
+        "Price": 10,
+        "Price1": 10
+
+
+    },
+    {
+        "Type": "Nice Biscuits",
+        "Desc": "Product : Nice -sweet biscuit that is popular in many parts of the world.\nExpiry Date : 17/07/2024",
+        "Recommendation": "This product should move to the discount sale area",
+        "Biscuit": "Nice",
+        "Price": 15,
+	    "Price1": 15
+        
+
+    },
+    {
+        "Type": "Strawberry Biscuits",
+        "Desc": "Product : Strawberry Biscuits -commonly enjoyed as a snack  paired with a cup of tea, coffee.\nExpiry Date : 27/07/2024 ",
+        "Recommendation": "This product should move to the discount sale area",
+        "Biscuit": "Strawberry",
+        "Price": 25,
+        "Price1": 25
+
+
+
+    },
+    {
+        "Type": "StrawberryPuff Biscuits",
+        "Desc": "Product : StrawberryPuff Biscuits - dessert or pastry made with a puff pastry base and filled with strawberry-flavored cream or compote\nExpiry Date : 2/09/2025 ",
+        "Recommendation": "This product should move to the discount sale area",
+        "Biscuit": "StrawberryPuff",
+        "Price": 35,
+        "Price1": 35
+
+
+
+    },
+    {
+        "Type": "oreo Biscuits",
+        "Desc": "Product : oreo Biscuits -beloved and iconic brand of sandwich cookies\nExpiry Date : 19/12/2023",
+        "Recommendation": "This product should move to the discount sale area",
+        "Biscuit": "Oreo",
+        "Price": 20,
+        "Price1": 20
+
+
+
+    }
+  ]
+}
